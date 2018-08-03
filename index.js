@@ -79,9 +79,9 @@ function _decodeMethod(data) {
           const isArray = Array.isArray(param);
 
           if (isArray) {
-            parsedParam = param.map(val => new Web3().toBigNumber(val).toString());
+            parsedParam = param.map(val => new Web3().toBigNumber(val).toString( 10, 85 ));
           } else {
-            parsedParam = new Web3().toBigNumber(param).toString();
+            parsedParam = new Web3().toBigNumber(param).toString( 10, 85 );
           }
         }
         return {
