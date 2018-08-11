@@ -146,7 +146,7 @@ function _decodeLogs(logs) {
           decodedP.value = padZeros(new Web3().toBigNumber(decodedP.value).toString(16));
         }
         else if(param.type == "uint256" || param.type == "uint8" || param.type == "int" ){
-          decodedP.value = new Web3().toBigNumber(decodedP.value).toString(10);
+          decodedP.value = new Web3().toBigNumber(decodedP.value).toString( 10, 85 );
         }
 
         decodedParams.push(decodedP);
